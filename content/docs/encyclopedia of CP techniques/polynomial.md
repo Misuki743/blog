@@ -47,7 +47,7 @@ $$\eqalign{
 so for {{< math >}}$k = 0${{< /math >}}, it is just {{< math >}}$g_0 = \frac{1}{f_0}${{< /math >}}, for the rest, we have
 ```math {.text-center}
 $$\eqalign{
-&\sum\limits_{j = 0}^{k - 1} f_{k - j}g_j + f_0 g_j = 0 \\
+&\sum\limits_{j = 0}^{k - 1} f_{k - j}g_j + f_0 g_k = 0 \\
 \\
 \leftrightarrow &g_k = \frac{-\sum\limits_{j = 0}^{k - 1}f_{k - j}g_j}{f_0}
 }
