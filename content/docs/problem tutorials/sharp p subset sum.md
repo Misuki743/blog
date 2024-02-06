@@ -18,9 +18,6 @@ seo:
   noindex: false # false (default) or true
 ---
 
-
-## {{< math >}}$\#_p${{< /math >}} subset sum
-
 [problem link](https://judge.yosupo.jp/problem/sharp_p_subset_sum)
 
 informal problem statement:
