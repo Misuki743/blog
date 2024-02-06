@@ -30,7 +30,7 @@ $$
 $$
 ```
 
-calculate this naively using NTT + D&C leads to a {{< math >}}$O(Nlg^2N)${{< /math >}} solution, but we can do better.
+calculate this naively using DP would takes {{< math >}}$O(NT)${{< /math >}}, but we can do better.
 
 let {{< math >}}$freq_i${{< /math >}} denote the frequency of {{< math >}}$i${{< /math >}} in sequence {{< math >}}$s_N${{< /math >}}, then we can rewrite the polynomial into this
 ```math {.text-center}
