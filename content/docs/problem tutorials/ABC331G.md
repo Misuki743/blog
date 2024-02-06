@@ -53,7 +53,7 @@ but it seems easier to deal {{< math >}}$E[\#\text{operations done when we are a
 $$\eqalign{
 &\sum\limits_{S \subset [1..M]}E[\#\text{operations done when we are at vertex }S]
 \\
-=&\sum\limits_{S \subset [1..M]} (-1)^{|S| + 1}\text{ }E[\#\text{operations done when we are at vertices }\subseteq S]
+=&\sum\limits_{S \subset [1..M]} (-1)^{M - |S| - 1}\text{ }E[\#\text{operations done when we are at vertices }\subseteq S]
 }$$
 ```
 
@@ -61,34 +61,33 @@ let {{< math >}}$f(S)${{< /math >}} denote {{< math >}}$\#${{< /math >}} cards b
 
 ```math {.text-center}
 $$\eqalign{
-&\sum\limits_{S \subset [1..M]} (-1)^{|S| + 1}\text{ }E[\#\text{operations done when we are at vertices }\subseteq S]
+&\sum\limits_{S \subset [1..M]} (-1)^{M - |S| - 1}\text{ }E[\#\text{operations done when we are at vertices }\subseteq S]
 \\
 \\
-=&\sum\limits_{S \subset [1..M]} (-1)^{|S| + 1}\text{ }\sum\limits_{k = 0}^{\infty} Pr[(\#\text{operations done when we are at vertices }\subseteq S) > k]
+=&\sum\limits_{S \subset [1..M]} (-1)^{M - |S| - 1}\text{ }\sum\limits_{k = 0}^{\infty} Pr[(\#\text{operations done when we are at vertices }\subseteq S) > k]
 \\
 \\
-=&\sum\limits_{S \subset [1..M]} (-1)^{|S| + 1}\text{ }\sum\limits_{k = 0}^{\infty} (\frac{f(S)}{N})^{k}
+=&\sum\limits_{S \subset [1..M]} (-1)^{M - |S| - 1}\text{ }\sum\limits_{k = 0}^{\infty} (\frac{f(S)}{N})^{k}
 \\
 \\
-=&\sum\limits_{S \subset [1..M]} (-1)^{|S| + 1}\text{ }\frac{1}{1 - \frac{f(S)}{N}} \qquad (\text{by the sum of geometric progression})
+=&\sum\limits_{S \subset [1..M]} (-1)^{M - |S| - 1}\text{ }\frac{1}{1 - \frac{f(S)}{N}} \qquad (\text{by the sum of geometric progression})
 }$$
 ```
 
-finally, observe that {{< math >}}$f(S)${{< /math >}} can have value only in {{< math >}}$[1..M]${{< /math >}}, let consider group {{< math >}}$S${{< /math >}} with same {{< math >}}$f(S)${{< /math >}} and calculate them at once, also only the parity of {{< math >}}$|S|${{< /math >}} is important, we can group {{< math >}}$S${{< /math >}} with same ({{< math >}}$|S| \bmod 2${{< /math >}}) together, and we have
+finally, observe that {{< math >}}$f(S)${{< /math >}} can have value only in {{< math >}}$[1..M]${{< /math >}}, let consider group {{< math >}}$S${{< /math >}} with same {{< math >}}$f(S)${{< /math >}} and calculate them at once, also only the parity of {{< math >}}$M - |S|${{< /math >}} is important, we can group {{< math >}}$S${{< /math >}} with same ({{< math >}}$M - |S| \bmod 2${{< /math >}}) together, and we have
 
 ```math {.text-center}
 $$\eqalign{
-&\sum\limits_{S \subset [1..M]} (-1)^{|S| + 1}\text{ }\frac{1}{1 - \frac{f(S)}{N}}
+&\sum\limits_{S \subset [1..M]} (-1)^{M - |S| - 1}\text{ }\frac{1}{1 - \frac{f(S)}{N}}
 \\
 \\
-=&\sum\limits_{k = 0}^{N - 1}\frac{1}{1 - \frac{k}{N}}((\# S \text{ s.t. }(|S| \bmod 2 = 1)\text{ and } f(S) = k) - (\# S \text{ s.t. }(|S| \bmod 2 = 0)\text{ and } f(S) = k))
+=&\sum\limits_{k = 0}^{N - 1}\frac{1}{1 - \frac{k}{N}}((\# S \text{ s.t. }(M - |S| \bmod 2 = 1)\text{ and } f(S) = k) - (\# S \text{ s.t. }(M - |S| \bmod 2 = 0)\text{ and } f(S) = k))
 }$$
 ```
 
 and the problem boiled down to the following well-known problem
 
 > Given M items each have some non-negative integer weight, and the sum of weight is N, for each k in [0..N-1], count # ways to pick some subset of items have sum of weight equal to k
-
 
 Assume the weight of items are {{< math >}}$w_1, w_2, \dots, w_M${{< /math >}}, consider writing it in polynomial form, we can know that the answer for any {{< math >}}$k${{< /math >}} is
 
@@ -98,7 +97,7 @@ $$
 $$
 ```
 
-and the above polynomial can be calculate using D&C + NTT in {{< math >}}$O(NlgNlgM)${{< /math >}}, to deal with parity of {{< math >}}$|S|${{< /math >}}, just negate {{< math >}}$x^{w_i}${{< /math >}} and multiply the final polynomial with {{< math >}}$(-1)${{< /math >}} then we are done.
+and the above polynomial can be calculate using D&C + NTT in {{< math >}}$O(NlgNlgM)${{< /math >}}, to deal with parity of {{< math >}}$|S|${{< /math >}}, just negate {{< math >}}$x^{w_i}${{< /math >}} and multiply the final polynomial with {{< math >}}$(-1)${{< /math >}} when {{< math >}}$M${{< /math >}} is even, then we are done.
 
 (if you are not familier with it, see this: [library checker - Product of Polynomial Sequence](https://judge.yosupo.jp/problem/product_of_polynomial_sequence))
 
