@@ -98,7 +98,7 @@ $$
 $$
 ```
 
-and the above polynomial can be calculate using D&C + NTT in {{< math >}}$O(NlgNlgM)${{< /math >}}, to deal with parity of {{< math >}}$|S|${{< /math >}}, just negate {{< math >}}$w_i${{< /math >}} and multiply the final polynomial with {{< math >}}$(-1)${{< /math >}} then we are done.
+and the above polynomial can be calculate using D&C + NTT in {{< math >}}$O(NlgNlgM)${{< /math >}}, to deal with parity of {{< math >}}$|S|${{< /math >}}, just negate {{< math >}}$x^{w_i}${{< /math >}} and multiply the final polynomial with {{< math >}}$(-1)${{< /math >}} then we are done.
 
 (if you are not familier with it, see this: [library checker - Product of Polynomial Sequence](https://judge.yosupo.jp/problem/product_of_polynomial_sequence))
 
