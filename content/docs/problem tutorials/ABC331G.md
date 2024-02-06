@@ -98,8 +98,8 @@ $$
 $$
 ```
 
-and the above polynomial can be calculate using D&C + NTT in {{< math >}}$O(Nlg^2N)${{< /math >}}, to deal with parity of {{< math >}}$|S|${{< /math >}}, just negate {{< math >}}$w_i${{< /math >}} and multiply the final polynomial with {{< math >}}$(-1)${{< /math >}} then we are done.
+and the above polynomial can be calculate using D&C + NTT in {{< math >}}$O(NlgNlgM)${{< /math >}}, to deal with parity of {{< math >}}$|S|${{< /math >}}, just negate {{< math >}}$w_i${{< /math >}} and multiply the final polynomial with {{< math >}}$(-1)${{< /math >}} then we are done.
 
 (if you are not familier with it, see this: [library checker - Product of Polynomial Sequence](https://judge.yosupo.jp/problem/product_of_polynomial_sequence))
 
-sidenote: actually this problem can be solved in {{< math >}}$O(NlgN)${{< /math >}} using log-exp trick, it have been documented in [maspy's blog(written in Japanese)](https://maspypy.com/%E5%A4%9A%E9%A0%85%E5%BC%8F%E3%83%BB%E5%BD%A2%E5%BC%8F%E7%9A%84%E3%81%B9%E3%81%8D%E7%B4%9A%E6%95%B0-%E9%AB%98%E9%80%9F%E3%81%AB%E8%A8%88%E7%AE%97%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%82%E3%81%AE#toc15).
+sidenote: actually this problem can be solved in {{< math >}}$O(NlgN)${{< /math >}} using log-exp trick. ([detail description](https://misuki743.github.io/blog/docs/problem-tutorials/sharp-p-subset-sum/))
