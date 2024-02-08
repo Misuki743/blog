@@ -55,7 +55,7 @@ log(1 + x^i)' = &\frac{ix^{i - 1}}{1 + x^i} \\
 \\
 = &\sum\limits_{j = 1}^{\infty}(-1)^{j + 1}ix^{ji - 1}= ix^{i - 1} -ix^{2i - 1}+ix^{3i-1}\dots \\
 \\
-\leftrightarrow log(1 + x^i) = &\sum\limits_{j = 1}^{\infty}(-1)^{j + 1}\frac{x^{ij}}{j} = \frac{x^i}{i} - \frac{x^{2i}}{2} + \frac{x^{3i}}{3}\dots
+\leftrightarrow log(1 + x^i) = &\sum\limits_{j = 1}^{\infty}(-1)^{j + 1}\frac{x^{ij}}{j} = \frac{x^i}{1} - \frac{x^{2i}}{2} + \frac{x^{3i}}{3}\dots
 }$$
 ```
 
